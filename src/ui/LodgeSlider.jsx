@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
@@ -8,22 +8,22 @@ import styled from "styled-components";
 
 const images = [
   {
-    img: "/About.jpeg",
+    img: "/aboutmusic.jpeg",
   },
   {
-    img: "/About.jpeg",
+    img: "/aboutmusic.jpeg",
   },
   {
-    img: "/About.jpeg",
+    img: "/aboutmusic.jpeg",
   },
   {
-    img: "/About.jpeg",
+    img: "/aboutmusic.jpeg",
   },
   {
-    img: "/About.jpeg",
+    img: "/aboutmusic.jpeg",
   },
   {
-    img: "/About.jpeg",
+    img: "/aboutmusic.jpeg",
   },
 ];
 const SliderBox = styled.div`
@@ -41,10 +41,10 @@ export default function LodgeSlider() {
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 2500,
+          //   disableOnInteraction: false,
+          // }}
           loop={true}
           pagination={{
             clickable: true,

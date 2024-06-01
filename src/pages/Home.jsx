@@ -15,7 +15,8 @@ const HomeStyle = styled.div`
 const HomeBox = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 6rem;
+  margin-top: -0.5rem;
 `;
 
 const SearcBarBox = styled.div`
@@ -36,7 +37,7 @@ const LodgeBox = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 1.5rem;
-  gap: 7rem;
+  gap: 10rem;
 `;
 
 const Test = styled.div`
@@ -66,10 +67,10 @@ function Home() {
           <Filter />
         </Filterbox>
         <LodgeBox>
-          <Lodges img="About.jpeg" />
-          <Lodges img="aboutimage.jpeg" />
-          <Lodges img="aboutmusic.jpeg" />
-          <Lodges img="About.jpeg" />
+          <Lodges />
+          <Lodges />
+          <Lodges />
+          <Lodges />
         </LodgeBox>
       </HomeBox>
       <Test>

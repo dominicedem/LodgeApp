@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
 :root {
     --appbackgroundcolor: #efefef;
     --menubackgroundcolor: #efefef;
-    --primary_text_color: #121212;
+    --primary_text_color: #180000;
     --signout_text_color: #e33e;
     --signin_text_color: #217fd7;
     --signinBtn_hover_color: #0c65b8;
@@ -74,10 +74,10 @@ body {
     background-color: var(--signin_text_color) !important;
 } */
 .swiper-pagination-bullet-active {
-    background-color: var(--signin_text_color) !important;
+    background-color: var(--primary_text_color) !important;
 }
 .mySwiper {
-    height: 26rem;
+    height: 27.8rem;
 }
 
 .signout {
@@ -97,7 +97,7 @@ body {
     border-radius: 0.5rem;
 }
 .activeTab {
-    color: var(--signinBtn_hover_color);
+    color: var(--signin_text_color);
 }
 .inactiveTab {
     color: var(--faint_text_black);

@@ -14,7 +14,7 @@ const SignUpStyle = styled.div`
   align-items: center;
   justify-content: center;
   width: 100vw;
-  padding-bottom: 2rem;
+  padding: 8rem 0 2rem 0;
   @media (min-width: 600px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -216,7 +216,6 @@ function SignUp() {
     <SignUpStyle>
       <Description></Description>
       <SignUpPage>
-        <Img src="/signin.png" />
         <HeadBox>
           <Header type="head">Sign up</Header>
           <Header>Welcome back! Please enter your details</Header>

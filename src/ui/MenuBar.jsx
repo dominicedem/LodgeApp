@@ -13,7 +13,7 @@ import { RxCross1 } from "react-icons/rx";
 const MenuBarBox = styled.div`
   display: flex;
   align-items: start;
-  justify-content: space-between;
+  gap: 4rem;
   flex-direction: column;
   width: 100%;
   height: 100%;

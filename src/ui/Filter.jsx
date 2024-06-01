@@ -1,7 +1,7 @@
 import styled from "styled-components";
 // import { toggleFilter } from "../Slices/MapSlice";
 // import { useDispatch } from "react-redux";
-import { RiEqualizerFill } from "react-icons/ri";
+import { RiEqualizerLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 const FilterStyle = styled.div`
@@ -25,7 +25,8 @@ const FilterBox = styled.div`
   gap: 1.5rem;
 `;
 const iconStyle = {
-  color: "var(--faint_text_black)",
+  color: "var(--primary_text_color)",
+  // color: "var(--faint_text_black)",
   width: "2.2rem",
   height: "2.2rem",
   cursor: "pointer",
@@ -46,7 +47,7 @@ function Filter() {
           <List className={"inactiveTab"}>Vacant</List>
         </Link>
       </FilterBox>
-      <RiEqualizerFill style={iconStyle} />
+      <RiEqualizerLine style={iconStyle} />
     </FilterStyle>
   );
 }

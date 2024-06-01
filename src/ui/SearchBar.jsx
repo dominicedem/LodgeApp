@@ -29,7 +29,7 @@ const SecondBar = styled.div`
   align-items: start;
   flex-direction: column;
   width: 100%;
-  padding: 0 1.5rem 2rem 1.5rem;
+  padding: 0 1.5rem 1rem 1.5rem;
   background: inherit;
   gap: 1.5rem;
   border-bottom: 1px solid var(--secondary_text_faint);
