@@ -63,6 +63,15 @@ const ProfileBox = styled.div`
   padding: 1.6rem 2rem;
   border-bottom: 0.1rem solid var(--secondary_text_faint);
 `;
+const ListBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 1.5rem;
+`;
 const MenuText = styled.span`
   font-size: 2rem;
   display: flex;
@@ -101,44 +110,50 @@ function MenuBar() {
           <Text type="subhead">useremail@gmail.com</Text>
         </TextBox>
       </ProfileBox>
-      <MenuTextBox>
-        <NavLink onClick={() => handleClose()} style={linkStyle} to="/">
-          <MenuText>
-            <LiaHomeSolid style={IconStyle} />
-            Hostels
-          </MenuText>{" "}
+      <ListBox>
+        <MenuTextBox>
+          <NavLink onClick={() => handleClose()} style={linkStyle} to="/">
+            <MenuText>
+              <LiaHomeSolid style={IconStyle} />
+              Hostels
+            </MenuText>{" "}
+          </NavLink>
+          <NavLink onClick={() => handleClose()} style={linkStyle} to="/h">
+            <MenuText>
+              <IoSchoolOutline style={IconStyle} />
+              School
+            </MenuText>{" "}
+          </NavLink>
+          <NavLink onClick={() => handleClose()} style={linkStyle} to="/j">
+            <MenuText>
+              <LuUsers2 style={IconStyle} />
+              Get a roomate
+            </MenuText>{" "}
+          </NavLink>
+          <NavLink
+            onClick={() => handleClose()}
+            style={linkStyle}
+            to="/profile"
+          >
+            <MenuText>
+              <CgProfile style={IconStyle} />
+              Profile
+            </MenuText>{" "}
+          </NavLink>
+          <NavLink onClick={() => handleClose()} style={linkStyle} to="/g">
+            <MenuText>
+              <PiUsersThree style={IconStyle} />
+              Team
+            </MenuText>{" "}
+          </NavLink>
+        </MenuTextBox>
+        <NavLink onClick={() => handleClose()} style={linkStyle} to="review">
+          <MenuText className="signin">
+            <HiArrowRightOnRectangle style={signInIconStyle} />
+            Sign In
+          </MenuText>
         </NavLink>
-        <NavLink onClick={() => handleClose()} style={linkStyle} to="/h">
-          <MenuText>
-            <IoSchoolOutline style={IconStyle} />
-            School
-          </MenuText>{" "}
-        </NavLink>
-        <NavLink onClick={() => handleClose()} style={linkStyle} to="/j">
-          <MenuText>
-            <LuUsers2 style={IconStyle} />
-            Get a roomate
-          </MenuText>{" "}
-        </NavLink>
-        <NavLink onClick={() => handleClose()} style={linkStyle} to="/profile">
-          <MenuText>
-            <CgProfile style={IconStyle} />
-            Profile
-          </MenuText>{" "}
-        </NavLink>
-        <NavLink onClick={() => handleClose()} style={linkStyle} to="/g">
-          <MenuText>
-            <PiUsersThree style={IconStyle} />
-            Team
-          </MenuText>{" "}
-        </NavLink>
-      </MenuTextBox>
-      <NavLink onClick={() => handleClose()} style={linkStyle} to="review">
-        <MenuText className="signin">
-          <HiArrowRightOnRectangle style={signInIconStyle} />
-          Sign In
-        </MenuText>
-      </NavLink>
+      </ListBox>
       <CloseMenu onClick={() => handleClose()}>
         <RxCross1 style={IconStyle} />
       </CloseMenu>
