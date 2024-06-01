@@ -42,6 +42,9 @@ body {
     /* outline: 2px solid #f00; */
 }
 
+
+
+
 /* ::-webkit-scrollbar-thumb {
     background-color: #00597a;
     border-radius: 1rem;
@@ -67,6 +70,15 @@ body {
     border-radius: .6rem;
     
 } */
+/* .swiper-pagination-bullet {
+    background-color: var(--signin_text_color) !important;
+} */
+.swiper-pagination-bullet-active {
+    background-color: var(--signin_text_color) !important;
+}
+.mySwiper {
+    height: 26rem;
+}
 
 .signout {
     color: var(--signout_text_color);

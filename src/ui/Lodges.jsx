@@ -1,17 +1,13 @@
 import styled from "styled-components";
 import { TiStar } from "react-icons/ti";
 import { GrFormLocation } from "react-icons/gr";
+import LodgeSlider from "./LodgeSlider";
 
 const LodgesStyle = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   gap: 1rem;
-`;
-const Img = styled.img`
-  width: 100%;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1rem 0.5rem #0001;
 `;
 const LodgeDes = styled.div`
   display: flex;
@@ -48,15 +44,14 @@ const locationIcon = {
   height: "2.4rem",
 };
 const StarIcon = {
-  //   color: "var(--signin_text_color)",
   color: "var(--primary_text_color)",
   width: "2.4rem",
   height: "2.4rem",
 };
-function Lodges({ img }) {
+function Lodges() {
   return (
     <LodgesStyle>
-      <Img src={`/${img}`} />
+      <LodgeSlider />
       <LodgeDes>
         <LocationBox>
           <Text type="head">Andy's villa</Text>
