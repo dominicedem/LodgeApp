@@ -21,7 +21,7 @@ const Companydescription = styled.div`
 const CompanyLogo = styled.img`
   width: 3.5rem;
   height: 3.5rem;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   /* @media (max-width: 575px) {
     width: 4rem;
   } */
@@ -57,8 +57,8 @@ function Nav() {
     <NavStyle>
       <Companydescription onClick={() => dispatch(toggleMenu(true))}>
         <Link style={LinkStyle} to="/">
-          <CompanyLogo src="/futa.jpeg" alt="logo" />
-          <CompanyName>Futa Lodge</CompanyName>
+          <CompanyLogo src="/dlogo.png" alt="logo" />
+          <CompanyName>DLodge</CompanyName>
         </Link>
       </Companydescription>
 
