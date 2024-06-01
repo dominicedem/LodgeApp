@@ -70,7 +70,7 @@ const ListBox = styled.div`
   align-items: start;
   width: 100%;
   height: 100%;
-  padding-bottom: 1.5rem;
+  padding-bottom: 10%;
 `;
 const MenuText = styled.span`
   font-size: 2rem;
