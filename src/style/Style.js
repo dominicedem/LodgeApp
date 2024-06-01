@@ -41,7 +41,17 @@ body {
     outline: none;
     /* outline: 2px solid #f00; */
 }
-.mapStyle {
+
+/* ::-webkit-scrollbar-thumb {
+    background-color: #00597a;
+    border-radius: 1rem;
+}        
+::-webkit-scrollbar {
+    background-color:transparent;
+    width: 0.5vw;
+} */
+
+/* .mapStyle {
     height: 100%;
 }
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
@@ -56,7 +66,7 @@ body {
     border-left: 5px solid var(--mapColor);
     border-radius: .6rem;
     
-}
+} */
 
 .signout {
     color: var(--signout_text_color);

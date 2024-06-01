@@ -12,7 +12,6 @@ const SignUpStyle = styled.div`
   display: grid;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   width: 100vw;
   padding-bottom: 2rem;
   position: relative;

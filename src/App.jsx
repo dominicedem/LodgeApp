@@ -8,6 +8,7 @@ import mapReducer from "./Slices/MapSlice";
 import ErrorRoute from "./pages/ErrorRoute";
 import Loading from "./ui/Loading";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
 const Profile = lazy(() => import("./pages/Profile"));
 const VerifyEmail = lazy(() => import("./features/Authentication/VerifyEmail"));
 const SignIn = lazy(() => import("./features/Authentication/SignIn"));

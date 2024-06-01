@@ -11,29 +11,34 @@ const HomeStyle = styled.div`
   width: 100vw;
   padding: 21rem 0 4rem 0;
 `;
+
 const HomeBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
 `;
+
 const SearcBarBox = styled.div`
   position: fixed;
   background: var(--appbackgroundcolor);
   width: 100vw;
-  top: 10%;
+  top: 9%;
   left: 0;
-  padding-top: 2rem;
+  padding-top: 2.5rem;
   z-index: 100;
 `;
+
 const Filterbox = styled.div`
   padding: 0 1.5rem;
 `;
+
 const LodgeBox = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 1.5rem;
   gap: 7rem;
 `;
+
 const Test = styled.div`
   display: flex;
   align-items: center;
@@ -44,6 +49,7 @@ const Test = styled.div`
   width: 100%;
   margin-top: 2rem;
 `;
+
 const linkStyle = {
   textDecoration: "none",
   color: "var(--primary_text_color)",

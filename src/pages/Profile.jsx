@@ -20,7 +20,7 @@ const ProfileBox = styled.div`
   width: 100%;
   gap: 1.5rem;
   padding-bottom: 1rem;
-  padding-top: 70%;
+  padding-top: 60%;
   border-bottom: 0.1rem solid var(--secondary_text_faint);
 `;
 const Img = styled.img`
