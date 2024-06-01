@@ -79,6 +79,7 @@ const InputField = styled.div`
   border: 1.34px solid var(--inputField_border);
   padding: 1.2rem 0.5rem;
   &:hover,
+  &:active,
   &:focus {
     border: 1.34px solid var(--signin_text_color_faint);
   }

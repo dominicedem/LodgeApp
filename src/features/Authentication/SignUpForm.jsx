@@ -15,7 +15,6 @@ const SignUpStyle = styled.div`
   justify-content: center;
   width: 100vw;
   padding-bottom: 2rem;
-  overflow-x: hidden;
   @media (min-width: 600px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
