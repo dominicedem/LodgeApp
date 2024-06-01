@@ -22,7 +22,7 @@ const SearcBarBox = styled.div`
   position: fixed;
   background: var(--appbackgroundcolor);
   width: 100vw;
-  top: 9%;
+  top: 5rem;
   left: 0;
   padding-top: 2.5rem;
   z-index: 100;
