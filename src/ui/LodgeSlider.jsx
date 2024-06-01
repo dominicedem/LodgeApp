@@ -32,6 +32,7 @@ const SliderBox = styled.div`
 const Img = styled.img`
   border-radius: 0.5rem;
   width: 100%;
+  height: 90%;
   box-shadow: 0 0.5rem 1rem 0.5rem #0001;
 `;
 export default function LodgeSlider() {

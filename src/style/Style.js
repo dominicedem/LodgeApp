@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
 :root {
     --appbackgroundcolor: #efefef;
     --menubackgroundcolor: #efefef;
-    --primary_text_color: #180000;
+    --primary_text_color: #323232;
     --signout_text_color: #e33e;
     --signin_text_color: #217fd7;
     --signinBtn_hover_color: #0c65b8;
@@ -73,11 +73,15 @@ body {
 /* .swiper-pagination-bullet {
     background-color: var(--signin_text_color) !important;
 } */
+.swiper-pagination-bullets {
+    margin-bottom: -8px;
+}
+
 .swiper-pagination-bullet-active {
     background-color: var(--primary_text_color) !important;
 }
 .mySwiper {
-    height: 27.8rem;
+    height: 30rem;
 }
 
 .signout {

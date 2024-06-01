@@ -37,7 +37,7 @@ const LodgeBox = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 1.5rem;
-  gap: 10rem;
+  gap: 6rem;
 `;
 
 const Test = styled.div`

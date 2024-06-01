@@ -7,7 +7,7 @@ const LodgesStyle = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 1.8rem;
+  gap: 2rem;
 `;
 const LodgeDes = styled.div`
   display: flex;
@@ -25,14 +25,14 @@ const LocationBox = styled.div`
 const Text = styled.span`
   display: flex;
   align-items: center;
-  font-weight: ${(props) => (props.type === "head" ? "bold" : "0")};
+  /* font-weight: ${(props) => (props.type === "head" ? "bold" : "0")}; */
   transform: ${(props) =>
     props.type === "head" ? "translateX(0)" : "translateX(-8%)"};
   color: ${(props) =>
     props.type === "head"
       ? "var(--primary_text_color)"
       : "var(--signin_text_color)"};
-  font-size: ${(props) => (props.type === "head" ? "1.8rem" : "1.4rem")};
+  font-size: ${(props) => (props.type === "head" ? "2rem" : "1.4rem")};
 `;
 const Rating = styled.div`
   display: flex;
@@ -65,7 +65,7 @@ function Lodges() {
           <TiStar style={StarIcon} /> 4.05
         </Rating>
       </LodgeDes>
-      <Text style={{ fontSize: "1.7rem", fontWeight: "500" }} type="head">
+      <Text style={{ fontSize: "1.7rem", marginTop: "-.5rem" }} type="head">
         <span style={{ textDecoration: "line-through" }}>N</span>180,000
       </Text>
     </LodgesStyle>
