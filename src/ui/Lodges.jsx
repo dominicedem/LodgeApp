@@ -50,22 +50,31 @@ const StarIcon = {
   width: "1.8rem",
   height: "1.8rem",
 };
-function Lodges() {
+function Lodges({ radius, padding, rate }) {
   return (
     <LodgesStyle>
-      <LodgeSlider />
-      <LodgeDes>
+      <LodgeSlider radius={radius} />
+      <LodgeDes style={{ padding: `${padding}` }}>
         <LocationBox>
           <Text type="head">Andy's villa</Text>
           <Text>
             <TiLocation style={locationIcon} /> Eziobodo
           </Text>
         </LocationBox>
-        <Rating>
-          <TiStar style={StarIcon} /> 4.05
-        </Rating>
+        {rate && (
+          <Rating>
+            <TiStar style={StarIcon} /> 4.05
+          </Rating>
+        )}
       </LodgeDes>
-      <Text style={{ fontSize: "1.7rem", marginTop: "-.5rem" }} type="head">
+      <Text
+        style={{
+          fontSize: "1.7rem",
+          marginTop: "-.5rem",
+          padding: `${padding}`,
+        }}
+        type="head"
+      >
         <span style={{ textDecoration: "line-through" }}>N</span>180,000
       </Text>
     </LodgesStyle>

@@ -67,10 +67,11 @@ function Home() {
           <Filter />
         </Filterbox>
         <LodgeBox>
-          <Lodges />
-          <Lodges />
-          <Lodges />
-          <Lodges />
+          {Array.from({ length: 4 }).map((_, ind) => (
+            <>
+              <Lodges rate="true" key={ind} />
+            </>
+          ))}
         </LodgeBox>
       </HomeBox>
       <Test>

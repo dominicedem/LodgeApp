@@ -15,9 +15,12 @@ const GlobalStyle = createGlobalStyle`
     --secondary_text: #333;
     --secondary_text_faint: #3333333a;
     --tertiary_text_faint: #22222224;
+    --input_Icon_color: #3d3d3db5;
+    --star_Icon_color: #33333335;
     --inputField_border: #12121238;
+    --feature_background: #eef7ff;
+
     --blacktextcolor: #121212;
-    --blacktexthovercolor: #4b4b4b;
     --buttontextcolor:  #76b0c9;
     --secondary_text_color: #ccc;
     --backgroundColor: #121212;

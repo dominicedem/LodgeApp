@@ -18,10 +18,27 @@ const ButtonStyle = styled.button`
       : "1px solid var(--inputField_border)"};
   /* box-shadow: 0 1rem 1rem 0.5rem #0002; */
 `;
-function Button({ type, children, width }) {
+function Button({
+  type,
+  children,
+  width,
+  padding,
+  font,
+  backgroundColor,
+  color,
+}) {
   const { isLoading } = useMyPosition();
   return (
-    <ButtonStyle type={type} style={{ width: `${width}` }}>
+    <ButtonStyle
+      type={type}
+      style={{
+        width: `${width}`,
+        padding: `${padding}`,
+        fontSize: `${font}`,
+        background: `${backgroundColor}`,
+        color: `${color}`,
+      }}
+    >
       {!isLoading ? children : "Loading..."}
     </ButtonStyle>
   );

@@ -9,6 +9,7 @@ import ErrorRoute from "./pages/ErrorRoute";
 import Loading from "./ui/Loading";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+const LodgeDetails = lazy(() => import("./pages/LodgeDetails"));
 const Profile = lazy(() => import("./pages/Profile"));
 const VerifyEmail = lazy(() => import("./features/Authentication/VerifyEmail"));
 const SignIn = lazy(() => import("./features/Authentication/SignIn"));
@@ -16,7 +17,7 @@ const SignUp = lazy(() => import("./features/Authentication/SignUpForm"));
 const Applayout = lazy(() => import("./ui/Applayout"));
 const Home = lazy(() => import("./pages/Home"));
 const LodgeVideos = lazy(() => import("./pages/LodgeVideos"));
-const Review = lazy(() => import("./pages/Review"));
+// const Review = lazy(() => import("./ui/"));
 const ProtecteRoute = lazy(() => import("./ui/ProtecteRoute"));
 
 const store = configureStore({
@@ -51,9 +52,9 @@ function App() {
                   }
                 >
                   <Route index element={<Home />} />
-                  <Route path="/review" element={<Review />} />
                   <Route path="/lodgevideo" element={<LodgeVideos />} />
                 </Route>
+                <Route path="/lodgedetails" element={<LodgeDetails />} />
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/profile" element={<Profile />} />

@@ -177,7 +177,7 @@ const CloseMenu = styled.div`
 
 const IconStyle = {
   fontSize: "2rem",
-  color: "var(--ship_hover_color)",
+  color: "var(--input_Icon_color)",
   cursor: "pointer",
 };
 const linkStyle = {

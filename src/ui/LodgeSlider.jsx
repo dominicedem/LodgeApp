@@ -5,6 +5,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const images = [
   {
@@ -35,12 +36,12 @@ const Img = styled.img`
   height: 90%;
   box-shadow: 0 0.5rem 1rem 0.5rem #0001;
 `;
-export default function LodgeSlider() {
+export default function LodgeSlider({ radius }) {
   return (
     <>
       <SliderBox>
         <Swiper
-          spaceBetween={30}
+          spaceBetween={20}
           centeredSlides={true}
           // autoplay={{
           //   delay: 2500,
@@ -55,7 +56,13 @@ export default function LodgeSlider() {
         >
           {images.map((val, ind) => (
             <SwiperSlide>
-              <Img key={ind} src={`${val.img}`} />
+              <Link to="/lodgedetails">
+                <Img
+                  style={radius && { borderRadius: "0" }}
+                  key={ind}
+                  src={`${val.img}`}
+                />
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
