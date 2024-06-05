@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { TiStar } from "react-icons/ti";
-import { TiLocation } from "react-icons/ti";
+import { ImLocation } from "react-icons/im";
 import LodgeSlider from "./LodgeSlider";
 import { TfiCommentAlt } from "react-icons/tfi";
 
@@ -38,7 +38,7 @@ const Rating = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1.4rem;
+  font-size: ${(props) => (props.type === "comment" ? "1.6rem" : "1.4rem")};
 `;
 const School = styled.div`
   display: flex;
@@ -49,8 +49,8 @@ const School = styled.div`
 `;
 const locationIcon = {
   color: "var(--signin_text_color)",
-  width: "1.8rem",
-  height: "1.8rem",
+  width: "1.3rem",
+  height: "1.3rem",
 };
 const starIcon = {
   color: "var(--primary_text_color)",
@@ -59,8 +59,8 @@ const starIcon = {
 };
 const commentIcon = {
   color: "var(--primary_text_color)",
-  width: "1.2rem",
-  height: "1.2rem",
+  width: "1.8rem",
+  height: "1.8rem",
 };
 
 function Lodges({ radius, padding, right, filter }) {
@@ -74,14 +74,14 @@ function Lodges({ radius, padding, right, filter }) {
             <>
               <Text>A room self contain</Text>
               <Text type="icon" style={{ color: "var(--signin_text_color)" }}>
-                <TiLocation style={locationIcon} /> Eziobodo
+                <ImLocation style={locationIcon} /> Eziobodo
               </Text>
             </>
           ) : (
             <School>
               <Text>Department</Text>
-              <Text type="icon">
-                <TiLocation style={locationIcon} /> Futo
+              <Text style={{ color: "var(--signin_text_color)" }} type="icon">
+                <ImLocation style={locationIcon} /> Futo
               </Text>
             </School>
           )}
@@ -91,7 +91,7 @@ function Lodges({ radius, padding, right, filter }) {
             <TiStar style={starIcon} /> 4.05
           </Rating>
         ) : right === "comment" ? (
-          <Rating>
+          <Rating type="comment">
             200 <TfiCommentAlt style={commentIcon} />
           </Rating>
         ) : null}
@@ -100,7 +100,7 @@ function Lodges({ radius, padding, right, filter }) {
         <Text
           style={{
             fontSize: "1.7rem",
-            marginTop: ".3rem",
+            marginTop: "-.2rem",
             padding: `${padding}`,
           }}
           type="head"

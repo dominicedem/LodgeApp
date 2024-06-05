@@ -105,6 +105,7 @@ body {
 .activeFilter {
     background: var(--signin_active_color_faint);
     border-radius: 0.5rem;
+    font-weight: bold;
 }
 .activeTab {
     color: var(--signin_text_color);

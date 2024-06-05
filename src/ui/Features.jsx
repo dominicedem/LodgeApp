@@ -11,7 +11,7 @@ const FeaturesStyle = styled.div`
   background-color: var(--feature_background);
   width: 90%;
   gap: 2rem;
-  padding: 1rem;
+  padding: 1rem 1rem 2rem 1rem;
   border-radius: 0.5rem;
 `;
 const FeatureListCon = styled.div`
@@ -40,14 +40,10 @@ const Text = styled.span`
   gap: 0.5rem;
   font-size: 1.6rem;
   color: var(--primary_text_color);
+  line-height: 1.3;
+  font-weight: ${(props) => (props.type === "head" ? "bold" : "0")};
 `;
-// const Texts = styled.span`
-//   display: flex;
-//   align-items: center;
-//   gap: 0.5rem;
-//   font-size: 1.6rem;
-//   color: var(--primary_text_color);
-// `;
+
 const featuresData = [
   {
     type: "Personal Transformer",
@@ -97,7 +93,11 @@ function Features() {
   const [collapse, setCollapse] = useState(true);
   return (
     <FeaturesStyle>
-      {hostel ? <Text>Features</Text> : <Text>Description</Text>}
+      {hostel ? (
+        <Text type="head">Features</Text>
+      ) : (
+        <Text type="head">Description</Text>
+      )}
       <FeatureListCon>
         {hostel ? (
           featuresData.map((val, ind) => (

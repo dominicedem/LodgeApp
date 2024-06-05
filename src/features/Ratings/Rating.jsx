@@ -2,9 +2,11 @@ import styled from "styled-components";
 import StarRating from "../../ui/StarRating";
 import { useSelector } from "react-redux";
 import { TfiCommentAlt } from "react-icons/tfi";
-import { MdOutlineThumbUp } from "react-icons/md";
-import { IoIosArrowDown } from "react-icons/io";
-import { IoIosArrowUp } from "react-icons/io";
+// import { MdOutlineThumbUp } from "react-icons/md";
+import { HiMiniHandThumbUp } from "react-icons/hi2";
+
+import { AiOutlineDown } from "react-icons/ai";
+import { AiOutlineUp } from "react-icons/ai";
 import { useState } from "react";
 import { Max_Text_length } from "../../utils/Constants";
 const RatingStyle = styled.div`
@@ -19,12 +21,13 @@ const RatingStyle = styled.div`
 const Text = styled.span`
   display: flex;
   align-items: center;
+  gap: 0.5rem;
   font-size: ${(props) => (props.type === "review" ? "1.4rem" : "1.6rem")};
   color: ${(props) =>
     props.type === "subhead"
       ? "var(--secondary_text)"
       : "var(--primary_text_color)"};
-  /* font-weight: ${(props) => (props.type === "subhead" ? "none" : "bold")}; */
+  line-height: ${(props) => (props.type === "review" ? "1.35" : "")};
 `;
 
 const ImgBox = styled.div`
@@ -70,22 +73,23 @@ const IconBox = styled.div`
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 1.25rem;
+  font-size: 1.6rem;
+  color: var(--faint_text_black);
 `;
 const iconStyle = {
-  width: "2rem",
-  height: "2rem",
-  color: "var(--primary_text_color)",
+  width: "1.8rem",
+  height: "1.8rem",
+  color: "var(--faint_text_black)",
 };
 const ctaLikeStyle = {
-  width: "1.4rem",
-  height: "1.4rem",
+  width: "2rem",
+  height: "2rem",
   color: "var(--input_Icon_color)",
   marginTop: "-1.5px",
 };
 const ctaStyle = {
-  width: "1.4rem",
-  height: "1.4rem",
+  width: "2rem",
+  height: "2rem",
   color: "var(--input_Icon_color)",
 };
 
@@ -127,22 +131,28 @@ function Rating() {
       {School && (
         <InteractBox>
           {School && collapse && (
-            <Text onClick={() => setCollapse((el) => !el)}>
-              See more <IoIosArrowDown style={iconStyle} />
+            <Text
+              style={{ color: "var(--faint_text_black)", fontSize: "1.6rem" }}
+              onClick={() => setCollapse((el) => !el)}
+            >
+              See more <AiOutlineDown style={iconStyle} />
             </Text>
           )}
           {School && !collapse && (
-            <Text onClick={() => setCollapse((el) => !el)}>
-              See less <IoIosArrowUp style={iconStyle} />
+            <Text
+              style={{ color: "var(--faint_text_black)", fontSize: "1.6rem" }}
+              onClick={() => setCollapse((el) => !el)}
+            >
+              See less <AiOutlineUp style={iconStyle} />
             </Text>
           )}
           <CtaBox>
             <IconBox>
               43.7k{" "}
-              <MdOutlineThumbUp
+              <HiMiniHandThumbUp
                 onClick={() => setLike((el) => !el)}
                 fill={
-                  like ? "var(--signin_text_color)" : "var(--input_Icon_color)"
+                  like ? "var(--signin_text_color)" : "var(--faint_text_black)"
                 }
                 style={ctaLikeStyle}
               />

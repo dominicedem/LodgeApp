@@ -113,21 +113,36 @@ function SearchBar() {
           className={hostel && "activeFilter"}
           onClick={() => dispatch(setHome(true))}
         >
-          <IoSchoolOutline style={iconStyles} />
+          <IoSchoolOutline
+            stroke={
+              hostel ? "var(--primary_text_color)" : "var(--faint_text_black)"
+            }
+            style={iconStyles}
+          />
           Hostel
         </Types>
         <Types
           className={School && "activeFilter"}
           onClick={() => dispatch(setSchool(true))}
         >
-          <LiaHomeSolid style={iconStyles} />
+          <LiaHomeSolid
+            fill={
+              School ? "var(--primary_text_color)" : "var(--faint_text_black)"
+            }
+            style={iconStyles}
+          />
           School
         </Types>
         <Types
           className={roomate && "activeFilter"}
           onClick={() => dispatch(setRoommate(true))}
         >
-          <LuUsers2 style={iconStyles} />
+          <LuUsers2
+            stroke={
+              roomate ? "var(--primary_text_color)" : "var(--faint_text_black)"
+            }
+            style={iconStyles}
+          />
           Roommate
         </Types>
       </SearchType>
