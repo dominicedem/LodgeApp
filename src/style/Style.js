@@ -80,7 +80,7 @@ body {
     background-color: var(--signin_text_color) !important;
 } */
 .swiper-pagination-bullets {
-    margin-bottom: -8px;
+    margin-bottom: -3px;
 }
 
 .swiper-pagination-bullet-active {

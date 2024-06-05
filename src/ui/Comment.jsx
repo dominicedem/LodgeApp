@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { TiStar } from "react-icons/ti";
 import Button from "./Button";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 
 const CommentStyle = styled.div`

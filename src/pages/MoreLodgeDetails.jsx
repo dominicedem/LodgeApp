@@ -6,6 +6,7 @@ import Button from "../ui/Button";
 import Pagination from "../ui/Pagination";
 import RevFilterModal from "../ui/RevFilterModal";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const MoreLodgeDetailsStyle = styled.div`
   width: 100vw;
@@ -15,7 +16,7 @@ const MoreLodgeDetailsStyle = styled.div`
 `;
 const ReviewDetailStyle = styled.div`
   width: 100%;
-  padding: 2rem 2rem 4rem 2rem;
+  padding: 4rem 2rem 4rem 2rem;
 `;
 const Reviews = styled.div`
   display: flex;
@@ -43,9 +44,9 @@ const BtnBox = styled.div`
 `;
 const ModalBox = styled.div`
   position: absolute;
-  top: 37%;
+  top: 40%;
   right: 5%;
-  width: 75vw;
+  width: 65vw;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem 0.5rem var(--box_shadow);
 `;
@@ -59,18 +60,30 @@ const OverLay = styled.div`
 `;
 function MoreLodgeDetails() {
   const [revModal, setRevModal] = useState(false);
+  const { hostel, School } = useSelector((state) => state.filterData);
+
   function handleClose(e) {
     e.target.className.includes("overLay") && setRevModal(false);
   }
   return (
-    <MoreLodgeDetailsStyle>
-      <BackBtn />
-      <ReviewDetailStyle>
-        <ReviewDetails />
-      </ReviewDetailStyle>
-      <Reviews>
+    <MoreLodgeDetailsStyle
+      style={hostel ? { paddingTop: "5rem" } : { paddingTop: "8rem" }}
+    >
+      <BackBtn
+        top="1.5%"
+        bottomLine={{
+          padding: "2rem",
+          line: "1px solid var(--tertiary_text_faint)",
+        }}
+      />
+      {hostel && (
+        <ReviewDetailStyle>
+          <ReviewDetails />
+        </ReviewDetailStyle>
+      )}
+      <Reviews style={School ? { marginTop: "1.5rem" } : { marginTop: "0" }}>
         <RewiewsHead>
-          <Text>42 reviews</Text>
+          {hostel ? <Text>42 reviews</Text> : <Text>Comment (42)</Text>}
           <BtnBox onClick={() => setRevModal((el) => !el)}>
             <Button width="100%" padding=".3rem" font="1.6rem" arrow={"true"}>
               Most recent
@@ -84,7 +97,7 @@ function MoreLodgeDetails() {
       <Pagination />
       {revModal && (
         <OverLay onClick={(e) => handleClose(e)} className="overLay">
-          <ModalBox>
+          <ModalBox style={School ? { top: "15%" } : { top: "40" }}>
             <RevFilterModal close={setRevModal} />
           </ModalBox>
         </OverLay>

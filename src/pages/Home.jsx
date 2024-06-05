@@ -15,8 +15,8 @@ const HomeStyle = styled.div`
 const HomeBox = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 6rem;
-  margin-top: -0.5rem;
+  gap: 4rem;
+  margin-top: -1rem;
 `;
 
 const SearcBarBox = styled.div`

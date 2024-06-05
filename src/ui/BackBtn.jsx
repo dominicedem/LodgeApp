@@ -11,6 +11,7 @@ const CloseMenu = styled.div`
   font-size: 1.8rem;
   top: 3%;
   left: 3%;
+  width: 95%;
 `;
 const IconBox = styled.div`
   display: flex;
@@ -27,10 +28,17 @@ const closeIcon = {
   height: "2.4rem",
   marginLeft: "-.1rem",
 };
-function BackBtn() {
+function BackBtn({ top, bottomLine }) {
   const navigate = useNavigate();
   return (
-    <CloseMenu onClick={() => navigate(-1)}>
+    <CloseMenu
+      style={{
+        top: `${top}`,
+        paddingBottom: `${bottomLine?.padding}`,
+        borderBottom: `${bottomLine?.line}`,
+      }}
+      onClick={() => navigate(-1)}
+    >
       <IconBox>
         <IoChevronBack style={closeIcon} />
       </IconBox>

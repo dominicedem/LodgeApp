@@ -8,7 +8,7 @@ const LodgesStyle = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 2rem;
+  gap: 1rem;
 `;
 const LodgeDes = styled.div`
   display: flex;
@@ -48,7 +48,7 @@ const School = styled.div`
   margin-top: 0.5rem;
 `;
 const locationIcon = {
-  color: "var(--faint_text_black)",
+  color: "var(--signin_text_color)",
   width: "1.8rem",
   height: "1.8rem",
 };
@@ -72,10 +72,10 @@ function Lodges({ radius, padding, right, filter }) {
           <Text type="head">Andy's villa</Text>
           {filter === "hostel" ? (
             <>
-              <Text type="icon">
+              <Text>A room self contain</Text>
+              <Text type="icon" style={{ color: "var(--signin_text_color)" }}>
                 <TiLocation style={locationIcon} /> Eziobodo
               </Text>
-              <Text>A room self contain</Text>
             </>
           ) : (
             <School>
@@ -100,7 +100,7 @@ function Lodges({ radius, padding, right, filter }) {
         <Text
           style={{
             fontSize: "1.7rem",
-            marginTop: "-.5rem",
+            marginTop: ".3rem",
             padding: `${padding}`,
           }}
           type="head"

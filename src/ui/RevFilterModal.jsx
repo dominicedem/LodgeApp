@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { RxCross1 } from "react-icons/rx";
 import Button from "./Button";
+import { useSelector } from "react-redux";
 const ReviewFilterStyle = styled.div`
   display: flex;
   flex-direction: column;
@@ -52,6 +53,8 @@ const closeIcon = {
   height: "2.2rem",
 };
 function RevFilterModal({ close }) {
+  const { hostel } = useSelector((state) => state.filterData);
+
   function handleSave() {
     close(false);
   }
@@ -67,9 +70,11 @@ function RevFilterModal({ close }) {
         <List>
           Highest rated <Input type="radio" />
         </List>
-        <List>
-          lowest rated <Input type="radio" />
-        </List>
+        {hostel && (
+          <List>
+            lowest rated <Input type="radio" />
+          </List>
+        )}
       </SortListBox>
       <BtnBox onClick={handleSave}>
         <Button
@@ -77,7 +82,7 @@ function RevFilterModal({ close }) {
           backgroundColor="var(--signin_text_color)"
           color="var(--white_text)"
         >
-          Save
+          Sort
         </Button>
       </BtnBox>
     </ReviewFilterStyle>

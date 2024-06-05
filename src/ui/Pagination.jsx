@@ -53,7 +53,6 @@ function Pagination() {
   function handlePrev() {
     setPages((el) => el - 1);
   }
-  console.log(pages);
   return (
     <PaginationStyle>
       <PaginationBox>
