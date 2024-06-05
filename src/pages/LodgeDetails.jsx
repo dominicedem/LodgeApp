@@ -32,6 +32,7 @@ const ReviewStyle = styled.div`
   width: 100%;
 `;
 const CommentBox = styled.div`
+  margin-top: 8rem;
   width: 100%;
 `;
 const Cancel = styled.div`
