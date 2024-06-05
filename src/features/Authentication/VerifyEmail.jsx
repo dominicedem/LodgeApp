@@ -12,6 +12,7 @@ const VerifyEmailStyle = styled.div`
   justify-content: center;
   width: 100vw;
   height: 100vh;
+  background-color: var(--appbackgroundcolor);
   @media (min-width: 600px) {
     display: grid;
     grid-template-columns: 1fr 1fr;

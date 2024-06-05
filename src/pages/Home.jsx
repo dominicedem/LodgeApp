@@ -3,9 +3,9 @@ import styled from "styled-components";
 import SearchBar from "../ui/SearchBar";
 import Filter from "../ui/Filter";
 import Lodges from "../ui/Lodges";
+import { useSelector } from "react-redux";
 
 const HomeStyle = styled.div`
-  /* display: flex; */
   position: relative;
   background-color: var(--appbackgroundcolor);
   width: 100vw;
@@ -57,6 +57,7 @@ const linkStyle = {
   fontSize: "2rem",
 };
 function Home() {
+  const { hostel, School, roomate } = useSelector((state) => state.filterData);
   return (
     <HomeStyle>
       <SearcBarBox>
@@ -69,7 +70,8 @@ function Home() {
         <LodgeBox>
           {Array.from({ length: 4 }).map((_, ind) => (
             <>
-              <Lodges rate="true" key={ind} />
+              {School && <Lodges right="comment" key={ind} />}
+              {hostel && <Lodges right="rate" filter="hostel" key={ind} />}
             </>
           ))}
         </LodgeBox>

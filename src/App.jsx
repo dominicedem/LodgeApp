@@ -5,10 +5,12 @@ import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import menuReducer from "./Slices/MenuSlice";
 import mapReducer from "./Slices/MapSlice";
+import filterReducer from "./Slices/FilterSlice";
 import ErrorRoute from "./pages/ErrorRoute";
 import Loading from "./ui/Loading";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+const MoreLodgeDetails = lazy(() => import("./pages/MoreLodgeDetails"));
 const LodgeDetails = lazy(() => import("./pages/LodgeDetails"));
 const Profile = lazy(() => import("./pages/Profile"));
 const VerifyEmail = lazy(() => import("./features/Authentication/VerifyEmail"));
@@ -17,13 +19,13 @@ const SignUp = lazy(() => import("./features/Authentication/SignUpForm"));
 const Applayout = lazy(() => import("./ui/Applayout"));
 const Home = lazy(() => import("./pages/Home"));
 const LodgeVideos = lazy(() => import("./pages/LodgeVideos"));
-// const Review = lazy(() => import("./ui/"));
 const ProtecteRoute = lazy(() => import("./ui/ProtecteRoute"));
 
 const store = configureStore({
   reducer: {
     menuData: menuReducer,
     mapData: mapReducer,
+    filterData: filterReducer,
   },
 });
 
@@ -55,6 +57,7 @@ function App() {
                   <Route path="/lodgevideo" element={<LodgeVideos />} />
                 </Route>
                 <Route path="/lodgedetails" element={<LodgeDetails />} />
+                <Route path="/moredetails" element={<MoreLodgeDetails />} />
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/profile" element={<Profile />} />

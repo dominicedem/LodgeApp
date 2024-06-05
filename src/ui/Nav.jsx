@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { toggleMenu } from "../Slices/MenuSlice";
 import { SlMenu } from "react-icons/sl";
+import { setHome } from "../Slices/FilterSlice";
 // import { AiOutlineClose } from "react-icons/ai";
 
 const NavStyle = styled.div`
@@ -55,7 +56,7 @@ function Nav() {
   const dispatch = useDispatch();
   return (
     <NavStyle>
-      <Companydescription onClick={() => dispatch(toggleMenu(true))}>
+      <Companydescription onClick={() => dispatch(setHome(true))}>
         <Link style={LinkStyle} to="/">
           <CompanyLogo src="/dlogo.png" alt="logo" />
           <CompanyName>DLodge</CompanyName>

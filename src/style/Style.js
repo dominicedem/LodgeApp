@@ -2,8 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 :root {
-    --appbackgroundcolor: #efefef;
-    --menubackgroundcolor: #efefef;
+    --appbackgroundcolor: #fdfdfd;
+    --menubackgroundcolor: #fdfdfd;
     --primary_text_color: #323232;
     --signout_text_color: #e33e;
     --signin_text_color: #217fd7;
@@ -13,8 +13,11 @@ const GlobalStyle = createGlobalStyle`
     --faint_text_black: #1212129d;
     --white_text: #eee;
     --secondary_text: #333;
+    --box_shadow: #0001;
     --secondary_text_faint: #3333333a;
     --tertiary_text_faint: #22222224;
+    --modal_background: #00000065;
+    --pagination_faint: #bdbdbd3e;
     --input_Icon_color: #3d3d3db5;
     --star_Icon_color: #33333335;
     --inputField_border: #12121238;
@@ -99,7 +102,7 @@ body {
 .notVerify {
     background-color: var(--secondary_text_faint);
 }
-.active {
+.activeFilter {
     background: var(--signin_active_color_faint);
     border-radius: 0.5rem;
 }

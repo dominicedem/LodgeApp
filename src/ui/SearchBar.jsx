@@ -1,12 +1,14 @@
 import styled from "styled-components";
 import { IoSearch } from "react-icons/io5";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 // import { useDispatch } from "react-redux";
 // import { toggleFilter } from "../Slices/MapSlice";
 import { IoSchoolOutline } from "react-icons/io5";
 import { LiaHomeSolid } from "react-icons/lia";
 import { LuUsers2 } from "react-icons/lu";
+import { useDispatch, useSelector } from "react-redux";
+import { setHome, setRoommate, setSchool } from "../Slices/FilterSlice";
 
 const Searchs = styled.div`
   display: flex;
@@ -80,13 +82,15 @@ const iconStyles = {
   width: "2rem",
   height: "2rem",
 };
-const linkStyle = {
-  textDecoration: "none",
-  color: "var(--primary_text_color)",
-};
+// const linkStyle = {
+//   textDecoration: "none",
+//   color: "var(--primary_text_color)",
+// };
 function SearchBar() {
   const [searchedToken, setSearchedToken] = useState();
-  // const dispatch = useDispatch();
+  const { hostel, School, roomate } = useSelector((state) => state.filterData);
+
+  const dispatch = useDispatch();
   function handleSearch(e) {
     setSearchedToken(e.target.value);
   }
@@ -105,24 +109,27 @@ function SearchBar() {
         />
       </Searchs>
       <SearchType>
-        <NavLink style={linkStyle} to="/">
-          <Types>
-            <IoSchoolOutline style={iconStyles} />
-            Hostel
-          </Types>
-        </NavLink>
-        <NavLink style={linkStyle} to="/signup">
-          <Types>
-            <LiaHomeSolid style={iconStyles} />
-            School
-          </Types>
-        </NavLink>
-        <NavLink style={linkStyle} to="/signin">
-          <Types>
-            <LuUsers2 style={iconStyles} />
-            Roommate
-          </Types>
-        </NavLink>
+        <Types
+          className={hostel && "activeFilter"}
+          onClick={() => dispatch(setHome(true))}
+        >
+          <IoSchoolOutline style={iconStyles} />
+          Hostel
+        </Types>
+        <Types
+          className={School && "activeFilter"}
+          onClick={() => dispatch(setSchool(true))}
+        >
+          <LiaHomeSolid style={iconStyles} />
+          School
+        </Types>
+        <Types
+          className={roomate && "activeFilter"}
+          onClick={() => dispatch(setRoommate(true))}
+        >
+          <LuUsers2 style={iconStyles} />
+          Roommate
+        </Types>
       </SearchType>
     </SecondBar>
   );

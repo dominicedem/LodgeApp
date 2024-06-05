@@ -5,6 +5,7 @@ import Features from "../ui/Features";
 import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import Comment from "../ui/Comment";
+import { useSelector } from "react-redux";
 
 const LodgeDetailsStyle = styled.div`
   display: flex;
@@ -14,6 +15,7 @@ const LodgeDetailsStyle = styled.div`
   width: 100vw;
   padding-bottom: 3rem;
   position: relative;
+  background-color: var(--appbackgroundcolor);
 `;
 const LodgeStyle = styled.div`
   width: 100%;
@@ -55,10 +57,26 @@ const linkStyle = {
   textDecoration: "none",
 };
 function LodgeDetails() {
+  const { hostel, School, roomate } = useSelector((state) => state.filterData);
   return (
     <LodgeDetailsStyle>
       <LodgeStyle>
-        <Lodges radius="false" padding="0 2rem" />
+        {hostel && (
+          <Lodges
+            radius="false"
+            padding="0 2rem"
+            // right="rate"
+            filter="hostel"
+          />
+        )}
+        {School && (
+          <Lodges
+            radius="false"
+            padding="0 2rem"
+            // right="comment"
+            filter="school"
+          />
+        )}
       </LodgeStyle>
       <FeaturesStyle>
         <Features />

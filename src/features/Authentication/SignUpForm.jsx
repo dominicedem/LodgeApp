@@ -15,6 +15,7 @@ const SignUpStyle = styled.div`
   justify-content: center;
   width: 100vw;
   padding: 8rem 0 2rem 0;
+  background-color: var(--appbackgroundcolor);
   @media (min-width: 600px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -101,9 +102,6 @@ const Input = styled.input`
   border-radius: 0.7rem;
   font-size: 1.8rem;
   width: 100%;
-`;
-const Img = styled.img`
-  width: 50%;
 `;
 const Submit = styled.button`
   display: flex;

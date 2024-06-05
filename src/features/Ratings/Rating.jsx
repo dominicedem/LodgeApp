@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { TiStar } from "react-icons/ti";
+import StarRating from "../../ui/StarRating";
+import { useSelector } from "react-redux";
 
 const RatingStyle = styled.div`
   display: flex;
@@ -41,23 +43,14 @@ const ProfileBox = styled.div`
   width: 100%;
   padding: 1.6rem 0;
 `;
-const StarBox = styled.div`
+const StarBoxDetails = styled.div`
   display: flex;
   align-items: end;
-  gap: 0.5rem;
+  gap: 1.5rem;
 `;
-const StarIcon = {
-  color: "var(--star_Icon_color)",
-  width: "1.4rem",
-  height: "1.4rem",
-};
-const StarIconfill = {
-  color: "var(--primary_text_color)",
-  width: "1.4rem",
-  height: "1.4rem",
-};
 function Rating() {
-  const rating = 4;
+  const { hostel } = useSelector((state) => state.filterData);
+
   return (
     <RatingStyle>
       <ProfileBox>
@@ -66,25 +59,16 @@ function Rating() {
         </ImgBox>
         <TextBox>
           <Text type="head">Agbarakwe chukwu</Text>
-          <StarBox>
-            {Array.from({ length: 5 }).map((_, ind) => (
-              <>
-                {ind < rating ? (
-                  <TiStar style={StarIconfill} />
-                ) : (
-                  <TiStar style={StarIcon} />
-                )}
-              </>
-            ))}
+          <StarBoxDetails>
+            {hostel && <StarRating rate={4} />}
             <Text
               style={{
                 fontSize: "1rem",
-                marginLeft: "1rem",
               }}
             >
               3 months ago
             </Text>
-          </StarBox>
+          </StarBoxDetails>
         </TextBox>
       </ProfileBox>
       <Text type="review">

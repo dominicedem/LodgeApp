@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { TiStar } from "react-icons/ti";
 import Button from "./Button";
 import { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
 
 const CommentStyle = styled.div`
   display: flex;
@@ -35,7 +36,13 @@ const GiveRatingStyle = styled.div`
   align-items: center;
   gap: 0.5rem;
 `;
-const Test = styled.div``;
+const StarBox = styled.div``;
+const Span = styled.span`
+  margin-top: -0.5rem;
+  font-size: 1.6rem;
+  color: var(--faint_text_black);
+  align-self: start;
+`;
 const StarIcon = {
   color: "var(--star_Icon_color)",
   width: "3.5rem",
@@ -43,10 +50,16 @@ const StarIcon = {
 };
 function Comment() {
   const [comment, setComment] = useState();
+  const { hostel } = useSelector((state) => state.filterData);
+
   return (
     <CommentStyle>
-      <Text>Leave a review</Text>
-      <GiveRating />
+      {hostel ? <Text>Leave a review</Text> : <Text>Leave a comment</Text>}
+      {hostel ? (
+        <GiveRating hostel={hostel} />
+      ) : (
+        <Span>Share your eperience about this place</Span>
+      )}
       <Input
         onChange={(e) => setComment(e.target.value)}
         type="textarea"
@@ -66,7 +79,7 @@ function Comment() {
   );
 }
 
-function GiveRating() {
+function GiveRating({ hostel }) {
   const [active, setActive] = useState(0);
   const [choose, setChoose] = useState(false);
 
@@ -81,7 +94,7 @@ function GiveRating() {
     <GiveRatingStyle>
       {Array.from({ length: 5 }).map((_, ind) => (
         <>
-          <Test>
+          <StarBox>
             <TiStar
               onClick={() => setChoose(true)}
               onMouseEnter={() => handleEnter(ind)}
@@ -94,7 +107,7 @@ function GiveRating() {
                   : " var(--star_Icon_color)"
               }
             />
-          </Test>
+          </StarBox>
         </>
       ))}
     </GiveRatingStyle>

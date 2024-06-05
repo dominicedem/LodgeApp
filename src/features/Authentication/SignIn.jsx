@@ -15,6 +15,7 @@ const SignUpStyle = styled.div`
   width: 100vw;
   padding-bottom: 2rem;
   position: relative;
+  background-color: var(--appbackgroundcolor);
   @media (min-width: 600px) {
     display: grid;
     grid-template-columns: 1fr 1fr;

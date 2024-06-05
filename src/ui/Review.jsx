@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { TiStar } from "react-icons/ti";
 import Button from "./Button";
 import Rating from "../features/Ratings/Rating";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const ReviewStyle = styled.div`
   display: flex;
@@ -19,6 +21,7 @@ const RatingStyle = styled.div`
 const ReviewText = styled.span`
   font-size: 1.8rem;
   color: var(--primary_text_color);
+  font-weight: bold;
 `;
 const ReviewBox = styled.div`
   display: flex;
@@ -44,18 +47,28 @@ const StarIcon = {
   width: "1.8rem",
   height: "1.8rem",
 };
+const linkStyle = {
+  textDecoration: "none",
+  color: "inherit",
+};
 function Review() {
+  const { hostel, School, roomate } = useSelector((state) => state.filterData);
   return (
     <ReviewStyle>
       <ReviewBox>
         <ReviewHead>
-          <ReviewText>Review ( 47 )</ReviewText>
-          <RatingStyle>
-            <TiStar style={StarIcon} /> 4.05
-          </RatingStyle>
+          {hostel && <ReviewText>Review ( 47 )</ReviewText>}
+          {School && <ReviewText>Comment ( 47 )</ReviewText>}
+          {hostel && (
+            <RatingStyle>
+              <TiStar style={StarIcon} /> 4.05
+            </RatingStyle>
+          )}
         </ReviewHead>
         <Button width="20%" padding=".3rem" font="1.6rem">
-          See all
+          <Link style={linkStyle} link to="/moredetails">
+            See all
+          </Link>
         </Button>
       </ReviewBox>
       <RatingCon>
