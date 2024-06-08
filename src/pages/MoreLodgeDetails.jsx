@@ -44,7 +44,7 @@ const BtnBox = styled.div`
 `;
 const ModalBox = styled.div`
   position: absolute;
-  top: 40%;
+  top: 55rem;
   right: 5%;
   width: 65vw;
   border-radius: 1rem;

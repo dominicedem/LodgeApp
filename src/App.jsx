@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import menuReducer from "./Slices/MenuSlice";
 import mapReducer from "./Slices/MapSlice";
 import filterReducer from "./Slices/FilterSlice";
+import searchReducer from "./Slices/SearchSlice";
 import ErrorRoute from "./pages/ErrorRoute";
 import Loading from "./ui/Loading";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -26,6 +27,7 @@ const store = configureStore({
     menuData: menuReducer,
     mapData: mapReducer,
     filterData: filterReducer,
+    searchData: searchReducer,
   },
 });
 

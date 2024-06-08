@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
@@ -55,8 +55,8 @@ export default function LodgeSlider({ radius }) {
           className="mySwiper"
         >
           {images.map((val, ind) => (
-            <SwiperSlide>
-              <Link to="/lodgedetails">
+            <SwiperSlide key={ind}>
+              <Link to="/lodgedetails" key={ind}>
                 <Img
                   style={radius && { borderRadius: "0" }}
                   key={ind}

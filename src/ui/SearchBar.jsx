@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { IoSearch } from "react-icons/io5";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import { NavLink } from "react-router-dom";
 // import { useDispatch } from "react-redux";
 // import { toggleFilter } from "../Slices/MapSlice";
@@ -9,6 +9,7 @@ import { LiaHomeSolid } from "react-icons/lia";
 import { LuUsers2 } from "react-icons/lu";
 import { useDispatch, useSelector } from "react-redux";
 import { setHome, setRoommate, setSchool } from "../Slices/FilterSlice";
+import { setFilteredLodge } from "../Slices/SearchSlice";
 
 const Searchs = styled.div`
   display: flex;
@@ -86,15 +87,44 @@ const iconStyles = {
 //   textDecoration: "none",
 //   color: "var(--primary_text_color)",
 // };
-function SearchBar() {
-  const [searchedToken, setSearchedToken] = useState();
+const lodgeList = [
+  "muyiwa",
+  "balogun",
+  "odogbolu",
+  "iyarere",
+  "sanya",
+  "ijesha",
+  "aguda",
+  "ikare street",
+  "surulere",
+  "mushin",
+  "ojuelegba",
+  "masha",
+  "shita",
+  "lawanson-stein",
+  "emmanuel",
+];
+function SearchBar({ setactive }) {
+  const [searchedLodge, setSearchedLodge] = useState();
   const { hostel, School, roomate } = useSelector((state) => state.filterData);
 
   const dispatch = useDispatch();
   function handleSearch(e) {
-    setSearchedToken(e.target.value);
+    setSearchedLodge(e.target.value);
   }
-
+  useEffect(() => {
+    let newSearchedLodge = lodgeList.filter((val) =>
+      val.toLowerCase().includes(searchedLodge?.toLowerCase())
+    );
+    // let newSearchedLodge = lodgeList.filter(
+    //   (val) =>
+    //     val.toLowerCase().slice(0, [searchedLodge?.length]) ===
+    //       searchedLodge?.toLowerCase() && val
+    // );
+    newSearchedLodge.length >= 1 && newSearchedLodge.length < lodgeList.length
+      ? dispatch(setFilteredLodge(newSearchedLodge))
+      : dispatch(setFilteredLodge(""));
+  }, [searchedLodge, dispatch]);
   return (
     <SecondBar>
       <Searchs>
@@ -102,10 +132,12 @@ function SearchBar() {
           <IoSearch style={iconStyle} />
         </SearchIconBox>
         <Input
-          value={searchedToken}
+          onFocus={() => setactive(true)}
+          onBlur={() => setactive(false)}
+          value={searchedLodge}
           onChange={(e) => handleSearch(e)}
           type="text"
-          placeholder="Search tokens"
+          placeholder="Search lodge"
         />
       </Searchs>
       <SearchType>

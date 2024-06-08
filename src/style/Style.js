@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     --signinBtn_hover_color: #0c65b8;
     --signin_text_color_faint: #217fd755;
     --signin_active_color_faint: #217fd722;
+    --hover_background_blue:#217fd71e;
     --faint_text_black: #1212129d;
     --white_text: #eee;
     --secondary_text: #333;

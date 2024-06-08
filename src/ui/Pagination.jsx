@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { IoChevronBack } from "react-icons/io5";
 import { IoChevronForwardOutline } from "react-icons/io5";
-import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { PAGE_SIZE } from "../utils/Constants";
 
 const PaginationStyle = styled.div`
   display: flex;
@@ -43,30 +44,40 @@ const closeIconfill = {
   width: "2.4rem",
   height: "2.4rem",
 };
+const dataSize = 100;
 function Pagination() {
-  const [pages, setPages] = useState(0);
-  //   const PAGE_SIZE = 10;
-  //   const DATA_SIZE = 200;
+  const [searchParam, setSearchParam] = useSearchParams();
+
+  const current_page = !searchParam.get("page")
+    ? 1
+    : Number(searchParam.get("page"));
+  const totalPages = Math.ceil(dataSize / PAGE_SIZE);
   function handleNext() {
-    setPages((el) => el + 1);
+    const next = current_page !== totalPages ? current_page + 1 : current_page;
+    searchParam.set("page", next);
+    setSearchParam(searchParam);
   }
   function handlePrev() {
-    setPages((el) => el - 1);
+    const Prev = current_page === 1 ? current_page : current_page - 1;
+    searchParam.set("page", Prev);
+    setSearchParam(searchParam);
   }
   return (
     <PaginationStyle>
       <PaginationBox>
-        <Page onClick={handlePrev} disabled={pages < 1}>
-          <IoChevronBack style={pages < 1 ? closeIcon : closeIconfill} />
+        <Page onClick={handlePrev} disabled={current_page === 1}>
+          <IoChevronBack
+            style={current_page === 1 ? closeIcon : closeIconfill}
+          />
         </Page>
-        <Page type="count">2</Page>
-        <Page onClick={handleNext} disabled={pages > 9}>
+        <Page type="count">{current_page}</Page>
+        <Page onClick={handleNext} disabled={current_page === totalPages}>
           <IoChevronForwardOutline
-            style={pages > 9 ? closeIcon : closeIconfill}
+            style={current_page === totalPages ? closeIcon : closeIconfill}
           />
         </Page>
       </PaginationBox>
-      <Details>of 12</Details>
+      <Details>of {totalPages}</Details>
     </PaginationStyle>
   );
 }
